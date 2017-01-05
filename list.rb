@@ -11,11 +11,19 @@ class List
   end
 
   def complete_task(index)
-    tasks[index].complete!
+    if tasks[index].nil?
+      "index invalid"
+    else
+      tasks[index].complete!
+    end
   end
 
   def delete_task(index)
-    tasks.delete_at(index)
+    if tasks[index].nil?
+      "index invalid"
+    else
+      tasks.delete_at(index)
+    end
   end
 
   def completed_tasks
